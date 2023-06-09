@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<th:block th:include="/header"></th:block>
+<th:block th:include="/menu"></th:block>
+<div class="page-title">Books</div>
+
+<form action="#" th:object="${form}"
+      method="post">
+    <fieldset>
+        <th:block sec:authorize="isAuthenticated()" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+            <input type="submit" id="submitButton" th:value="Save">
+            <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        </th:block>
+        <th:block><a th:href="@{/edit-book/{id}(id=${book.bookId})}">Edit</a></th:block>
+        <div>
+            <p th:text="${book.title}">A</p>
+        </div>
+    </fieldset>
+</form>
+<a href="javascript:void(0);" onclick="goBack()">Back to Previous Page</a>
+
+<script>
+    function goBack() {
+        history.back();
+    }
+</script>
+
+<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

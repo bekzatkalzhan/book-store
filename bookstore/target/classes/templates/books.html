@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+  <meta charset="UTF-8">
+  <title>Books</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+<th:block th:include="/header"></th:block>
+<th:block th:include="/menu"></th:block>
+<div class="page-title">Books</div>
+
+<form action="#" th:object="${form}"
+      method="post">
+  <fieldset>
+    <a href="/add-book">Add Book</a>
+    <table>
+      <thead>
+      <tr>
+        <th> Title </th>
+        <th> Author </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:if="${books.isEmpty()}">
+        <td colspan="2"> No Books Available </td>
+      </tr>
+      <tr th:each="book : ${books}">
+        <td><a th:href="@{/books/{id}(id=${book.bookId})}"><span th:text="${book.title}"> Title </span></a></td>
+        <td><span th:text="${book.author}"> Author </span></td>
+      </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+<th:block th:include="/footer"></th:block>
+
+</body>
+</html>

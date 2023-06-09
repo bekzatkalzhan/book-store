@@ -1,0 +1,22 @@
+<div class="header-container"
+     xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+  <div class="site-name">Book Store</div>
+
+  <div class="header-bar">
+    <th:block sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post">
+          <input type="submit" value="Log out"/>
+        </form>
+    </th:block>
+
+    <th:block sec:authorize="!isAuthenticated()">
+<!--      <a th:href="@{/login}">Login</a>-->
+      <form th:action="@{/login}" method="post">
+        <input type="submit" value="Log in"/>
+      </form>
+    </th:block>
+  </div>
+
+</div>

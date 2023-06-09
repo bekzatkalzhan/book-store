@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+</head>
+<body>
+<th:block th:include="/header"></th:block>
+<th:block th:include="/menu"></th:block>
+<h1>Welcome!</h1>
+<table>
+    <thead>
+    <tr>
+        <th> Title </th>
+        <th> Author </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${books.isEmpty()}">
+        <td colspan="2"> No Books Available </td>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td><a th:href="@{/books/{id}(id=${book.bookId})}"><span th:text="${book.title}"> Title </span></a></td>
+        <td><span th:text="${book.author}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+<th:block th:include="/footer"></th:block>
+</body>
+</html>

@@ -1,0 +1,16 @@
+kz\bkalzhan\bookstore\service\impl\BookServiceImpl.class
+kz\bkalzhan\bookstore\entity\Category.class
+kz\bkalzhan\bookstore\repository\BookRepository.class
+kz\bkalzhan\bookstore\entity\User.class
+kz\bkalzhan\bookstore\entity\CategoryToBook.class
+kz\bkalzhan\bookstore\service\impl\UserDetailsServiceImpl.class
+kz\bkalzhan\bookstore\entity\Book.class
+kz\bkalzhan\bookstore\entity\RoleEnum.class
+kz\bkalzhan\bookstore\entity\OrderDetail.class
+kz\bkalzhan\bookstore\config\WebSecurityConfig.class
+kz\bkalzhan\bookstore\BookstoreApplication.class
+kz\bkalzhan\bookstore\entity\Order.class
+kz\bkalzhan\bookstore\service\BookService.class
+kz\bkalzhan\bookstore\controller\BookController.class
+kz\bkalzhan\bookstore\entity\Role.class
+kz\bkalzhan\bookstore\entity\Gender.class
